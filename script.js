@@ -55,3 +55,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.querySelectorAll('.powtoon-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.target.classList.add('clicked');
+    });
+});
+
+window.addEventListener("scroll", function() {
+    const progressBar = document.getElementById("progress-bar");
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    
+    progressBar.style.width = scrollPercent + "%";
+});
