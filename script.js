@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (filteredData.length > 0) {
             resultsSection.innerHTML = filteredData.map(item => `
-                <a href="${item.url}" class="result-item">
+                <a href="pages/${item.grade}.html" class="result-item"> <!-- URL'yi burada ayarlıyoruz -->
                     <div class="result-content">
                         <h3>${item.topic}</h3>
                         <p>${item.description}</p>
