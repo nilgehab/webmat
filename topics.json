@@ -5,7 +5,7 @@
         "tool": "Powtoon",
         "description": "6 basamaklı sayılar, doğal sayılar ve işlemler, kesirler.",
         "image": "images/powtoon.png",
-        "url": "1.html"
+        "url": "pages/1.html"
     },
     {
         "grade": "5",
@@ -13,7 +13,7 @@
         "tool": "Powtoon",
         "description": "Eşitliğin korunumu, değişme-birleşme ve dağılma özellikleri, işlem önceliği, örüntüler.",
         "image": "images/powtoon.png",
-        "url": "2.html"
+        "url": "pages/2.html"
     },
     {
         "grade": "5",
@@ -21,7 +21,7 @@
         "tool": "Powtoon",
         "description": "Temel geometrik çizimler ve inşalar, açı ölçme, çokgenler ve çember.",
         "image": "images/powtoon.png",
-        "url": "3.html"
+        "url": "pages/3.html"
     },
     {
         "grade": "5",
@@ -29,7 +29,7 @@
         "tool": "Powtoon",
         "description": "Dikdörtgenin çevre uzunluğu ve alanı.",
         "image": "images/powtoon.png",
-        "url": "4.html"
+        "url": "pages/4.html"
     },
     {
         "grade": "5",
@@ -37,15 +37,15 @@
         "tool": "Powtoon",
         "description": "Kategorik veri dağılımları.",
         "image": "images/powtoon.png",
-        "url": "5.html"
+        "url": "pages/5.html"
     },
     {
         "grade": "5",
         "topic": "Veriden Olasılığa",
-        "tool": "Powtoon",
+        "tool": "Plickers",
         "description": "Öznel olasılık.",
-        "image": "images/powtoon.png",
-        "url": "6.html"
+        "image": "images/plickers.png",
+        "url": "pages/6.html"
     },
     {
         "grade": "6",
@@ -53,7 +53,7 @@
         "tool": "Plickers",
         "description": "Doğal sayıların çarpanları ve katları, kesirlerle işlemler.",
         "image": "images/plickers.png",
-        "url": "7.html"
+        "url": "pages/7.html"
     },
     {
         "grade": "6",
@@ -61,7 +61,7 @@
         "tool": "Powtoon",
         "description": "Cebirsel ifadeler, bilinmeyen nicelikler, örüntü.",
         "image": "images/powtoon.png",
-        "url": "8.html"
+        "url": "pages/8.html"
     },
     {
         "grade": "6",
@@ -69,7 +69,7 @@
         "tool": "Powtoon",
         "description": "İki paralel doğrunun bir kesen ile oluşturduğu açılar.",
         "image": "images/powtoon.png",
-        "url": "9.html"
+        "url": "pages/9.html"
     },
     {
         "grade": "6",
@@ -77,7 +77,7 @@
         "tool": "Powtoon",
         "description": "Uzunluk ve alan ölçme birimleri arasındaki ilişki.",
         "image": "images/powtoon.png",
-        "url": "10.html"
+        "url": "pages/10.html"
     },
     {
         "grade": "6",
@@ -85,7 +85,7 @@
         "tool": "Plickers",
         "description": "Kategorik ve nicel (kesikli) veri dağılımları.",
         "image": "images/plickers.png",
-        "url": "11.html"
+        "url": "pages/11.html"
     },
     {
         "grade": "6",
@@ -93,7 +93,7 @@
         "tool": "Powtoon",
         "description": "Deneysel olasılık.",
         "image": "images/powtoon.png",
-        "url": "12.html"
+        "url": "pages/12.html"
     },
     {
         "grade": "7",
@@ -101,7 +101,7 @@
         "tool": "Plickers",
         "description": "Rasyonel sayılar ve rasyonel sayılarla işlemler.",
         "image": "images/plickers.png",
-        "url": "13.html"
+        "url": "pages/13.html"
     },
 
     {
@@ -110,7 +110,7 @@
         "tool": "Plickers",
         "description": "Cebirsel ifadelerle işlemler, denklem ve eşitsizlikler.",
         "image": "images/plickers.png",
-        "url": "14.html"
+        "url": "pages/14.html"
     },
     {
         "grade": "7",
@@ -118,7 +118,7 @@
         "tool": "Powtoon",
         "description": "Yansıma dönüşümü, orta dikme ve açıortay inşası.",
         "image": "images/powtoon.png",
-        "url": "15.html"
+        "url": "pages/15.html"
     },
     
     {
@@ -127,7 +127,7 @@
         "tool": "Powtoon",
         "description": "Cisimlerin farklı yönlerden görünümleri.",
         "image": "images/powtoon.png",
-        "url": "16.html"
+        "url": "pages/16.html"
     },
     {
         "grade": "7",
@@ -135,7 +135,7 @@
         "tool": "Plickers",
         "description": "Üçgenlerde kenarortay ve inşası.",
         "image": "images/plickers.png",
-        "url": "17.html"
+        "url": "pages/17.html"
     },
     {
         "grade": "7",
@@ -143,7 +143,7 @@
         "tool": "Powtoon",
         "description": "Kategorik ve nicel (sürekli) veri dağılımları.",
         "image": "images/powtoon.png",
-        "url": "18.html"
+        "url": "pages/18.html"
     },
     {
         "grade": "7",
@@ -151,7 +151,7 @@
         "tool": "Powtoon",
         "description": "Teorik olasılık.",
         "image": "images/powtoon.png",
-        "url": "19.html"
+        "url": "pages/19.html"
     },
     {
         "grade": "8",
@@ -159,7 +159,7 @@
         "tool": "Plickers",
         "description": "Gerçek sayılar, üslü ifadeler ve irrasyonel sayılar.",
         "image": "images/plickers.png",
-        "url": "20.html"
+        "url": "pages/20.html"
     },
     {
         "grade": "8",
@@ -167,7 +167,7 @@
         "tool": "GeoGebra",
         "description": "Doğrusal fonksiyonlar, dik koordinat sistemi.",
         "image": "images/geogebra.png",
-        "url": "21.html"
+        "url": "pages/21.html"
     },
     {
         "grade": "8",
@@ -175,7 +175,7 @@
         "tool": "Powtoon",
         "description": "Üçgende açı-kenar ilişkisi.",
         "image": "images/powtoon.png",
-        "url": "22.html"
+        "url": "pages/22.html"
     },
     {
         "grade": "8",
@@ -183,7 +183,7 @@
         "tool": "Powtoon",
         "description": "Dik prizmalar, dikdörtgen dik piramit.",
         "image": "images/powtoon.png",
-        "url": "23.html"
+        "url": "pages/23.html"
     },
     {
         "grade": "8",
@@ -191,7 +191,7 @@
         "tool": "Plickers",
         "description": "Dik koordinat sisteminde öteleme ve yansıma dönüşümü.",
         "image": "images/plickers.png",
-        "url": "24.html"
+        "url": "pages/24.html"
     },
     {
         "grade": "8",
@@ -199,7 +199,7 @@
         "tool": "Plickers",
         "description": "Kategorik ve nicel (sürekli) veri dağılımları.",
         "image": "images/plickers.png",
-        "url": "25.html"
+        "url": "pages/25.html"
     },
     {
         "grade": "8",
@@ -207,7 +207,7 @@
         "tool": "Powtoon",
         "description": "Olasılık: Deneysel olasılık ve teorik olasılık ilişkisi.",
         "image": "images/powtoon.png",
-        "url": "26.html"
+        "url": "pages/26.html"
     }
 
 ]
