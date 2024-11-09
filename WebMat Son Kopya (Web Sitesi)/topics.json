@@ -1,0 +1,213 @@
+[
+    {
+        "grade": "5",
+        "topic": "Sayılar ve Nicelikler",
+        "tool": "Powtoon",
+        "description": "6 basamaklı sayılar, doğal sayılar ve işlemler, kesirler.",
+        "image": "images/powtoon.png",
+        "url": "pages/1.html"
+    },
+    {
+        "grade": "5",
+        "topic": "İşlemlerle Cebirsel Düşünme",
+        "tool": "Powtoon",
+        "description": "Eşitliğin korunumu, değişme-birleşme ve dağılma özellikleri, işlem önceliği, örüntüler.",
+        "image": "images/powtoon.png",
+        "url": "pages/2.html"
+    },
+    {
+        "grade": "5",
+        "topic": "Geometrik Şekiller",
+        "tool": "Powtoon",
+        "description": "Temel geometrik çizimler ve inşalar, açı ölçme, çokgenler ve çember.",
+        "image": "images/powtoon.png",
+        "url": "pages/3.html"
+    },
+    {
+        "grade": "5",
+        "topic": "Geometrik Nicelikler",
+        "tool": "Powtoon",
+        "description": "Dikdörtgenin çevre uzunluğu ve alanı.",
+        "image": "images/powtoon.png",
+        "url": "pages/4.html"
+    },
+    {
+        "grade": "5",
+        "topic": "İstatistiksel Araştırma Süreci",
+        "tool": "Powtoon",
+        "description": "Kategorik veri dağılımları.",
+        "image": "images/powtoon.png",
+        "url": "pages/5.html"
+    },
+    {
+        "grade": "5",
+        "topic": "Veriden Olasılığa",
+        "tool": "Plickers",
+        "description": "Öznel olasılık.",
+        "image": "images/plickers.png",
+        "url": "pages/6.html"
+    },
+    {
+        "grade": "6",
+        "topic": "Sayılar ve Nicelikler",
+        "tool": "Plickers",
+        "description": "Doğal sayıların çarpanları ve katları, kesirlerle işlemler.",
+        "image": "images/plickers.png",
+        "url": "pages/7.html"
+    },
+    {
+        "grade": "6",
+        "topic": "İşlemlerle Cebirsel Düşünme ve Değişimler",
+        "tool": "Powtoon",
+        "description": "Cebirsel ifadeler, bilinmeyen nicelikler, örüntü.",
+        "image": "images/powtoon.png",
+        "url": "pages/8.html"
+    },
+    {
+        "grade": "6",
+        "topic": "Geometrik Şekiller",
+        "tool": "Powtoon",
+        "description": "İki paralel doğrunun bir kesen ile oluşturduğu açılar.",
+        "image": "images/powtoon.png",
+        "url": "pages/9.html"
+    },
+    {
+        "grade": "6",
+        "topic": "Geometrik Nicelikler",
+        "tool": "Powtoon",
+        "description": "Uzunluk ve alan ölçme birimleri arasındaki ilişki.",
+        "image": "images/powtoon.png",
+        "url": "pages/10.html"
+    },
+    {
+        "grade": "6",
+        "topic": "İstatistiksel Araştırma Süreci",
+        "tool": "Plickers",
+        "description": "Kategorik ve nicel (kesikli) veri dağılımları.",
+        "image": "images/plickers.png",
+        "url": "pages/11.html"
+    },
+    {
+        "grade": "6",
+        "topic": "Veriden Olasılığa",
+        "tool": "Powtoon",
+        "description": "Deneysel olasılık.",
+        "image": "images/powtoon.png",
+        "url": "pages/12.html"
+    },
+    {
+        "grade": "7",
+        "topic": "Sayılar ve Nicelikler",
+        "tool": "Plickers",
+        "description": "Rasyonel sayılar ve rasyonel sayılarla işlemler.",
+        "image": "images/plickers.png",
+        "url": "pages/13.html"
+    },
+
+    {
+        "grade": "7",
+        "topic": "İşlemlerle Cebirsel Düşünme ve Değişimler",
+        "tool": "Plickers",
+        "description": "Cebirsel ifadelerle işlemler, denklem ve eşitsizlikler.",
+        "image": "images/plickers.png",
+        "url": "pages/14.html"
+    },
+    {
+        "grade": "7",
+        "topic": "Dönüşüm",
+        "tool": "Powtoon",
+        "description": "Yansıma dönüşümü, orta dikme ve açıortay inşası.",
+        "image": "images/powtoon.png",
+        "url": "pages/15.html"
+    },
+    
+    {
+        "grade": "7",
+        "topic": "Geometrik Nicelikler",
+        "tool": "Powtoon",
+        "description": "Cisimlerin farklı yönlerden görünümleri.",
+        "image": "images/powtoon.png",
+        "url": "pages/16.html"
+    },
+    {
+        "grade": "7",
+        "topic": "Geometrik Şekiller",
+        "tool": "Plickers",
+        "description": "Üçgenlerde kenarortay ve inşası.",
+        "image": "images/plickers.png",
+        "url": "pages/17.html"
+    },
+    {
+        "grade": "7",
+        "topic": "İstatistiksel Araştırma Süreci",
+        "tool": "Powtoon",
+        "description": "Kategorik ve nicel (sürekli) veri dağılımları.",
+        "image": "images/powtoon.png",
+        "url": "pages/18.html"
+    },
+    {
+        "grade": "7",
+        "topic": "Veriden Olasılığa",
+        "tool": "Powtoon",
+        "description": "Teorik olasılık.",
+        "image": "images/powtoon.png",
+        "url": "pages/19.html"
+    },
+    {
+        "grade": "8",
+        "topic": "Sayılar ve Nicelikler",
+        "tool": "Plickers",
+        "description": "Gerçek sayılar, üslü ifadeler ve irrasyonel sayılar.",
+        "image": "images/plickers.png",
+        "url": "pages/20.html"
+    },
+    {
+        "grade": "8",
+        "topic": "Cebirsel Düşünme ve Değişimler",
+        "tool": "GeoGebra",
+        "description": "Doğrusal fonksiyonlar, dik koordinat sistemi.",
+        "image": "images/geogebra.png",
+        "url": "pages/21.html"
+    },
+    {
+        "grade": "8",
+        "topic": "Geometrik Şekiller",
+        "tool": "Powtoon",
+        "description": "Üçgende açı-kenar ilişkisi.",
+        "image": "images/powtoon.png",
+        "url": "pages/22.html"
+    },
+    {
+        "grade": "8",
+        "topic": "Geometrik Nicelikler",
+        "tool": "Powtoon",
+        "description": "Dik prizmalar, dikdörtgen dik piramit.",
+        "image": "images/powtoon.png",
+        "url": "pages/23.html"
+    },
+    {
+        "grade": "8",
+        "topic": "Dönüşüm",
+        "tool": "Plickers",
+        "description": "Dik koordinat sisteminde öteleme ve yansıma dönüşümü.",
+        "image": "images/plickers.png",
+        "url": "pages/24.html"
+    },
+    {
+        "grade": "8",
+        "topic": "İstatistiksel Araştırma Süreci",
+        "tool": "Plickers",
+        "description": "Kategorik ve nicel (sürekli) veri dağılımları.",
+        "image": "images/plickers.png",
+        "url": "pages/25.html"
+    },
+    {
+        "grade": "8",
+        "topic": "Veriden Olasılığa",
+        "tool": "Powtoon",
+        "description": "Olasılık: Deneysel olasılık ve teorik olasılık ilişkisi.",
+        "image": "images/powtoon.png",
+        "url": "pages/26.html"
+    }
+
+]
