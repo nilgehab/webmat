@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!--
+   created with Free Online Sitemap Generator www.xml-sitemaps.com 
+  -->
+
+  <!-- Ana sayfa -->
+  <url>
+    <loc>https://webmat.org/</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Index sayfası -->
+  <url>
+    <loc>https://webmat.org/index.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Powtoon sayfası -->
+  <url>
+    <loc>https://webmat.org/pages/powtoon.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Plickers sayfası -->
+  <url>
+    <loc>https://webmat.org/pages/plickers.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Geogebra sayfası -->
+  <url>
+    <loc>https://webmat.org/pages/geogebra.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Proje hakkında sayfası -->
+  <url>
+    <loc>https://webmat.org/pages/proje-hakkinda.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- 26 sayfa -->
+  <url>
+    <loc>https://webmat.org/pages/1.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/2.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/3.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/4.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/5.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/6.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/7.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/8.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/9.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/10.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/11.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/12.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/13.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/14.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/15.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/16.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/17.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/18.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/19.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/20.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/21.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/22.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/23.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/24.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/25.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://webmat.org/pages/26.html</loc>
+    <lastmod>2024-11-09T21:32:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
