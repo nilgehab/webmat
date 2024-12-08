@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saat Teması</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #a2c2e0; /* Pastel mavi */
+            display: flex;
+            color: #333;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        #panel {
+            width: 320px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        #panel div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #panel label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #4e5d6c; /* Pastel gri-mavi */
+            text-align: center;
+        }
+        .control {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+        .control input[type="range"] {
+            width: 200px;
+            height: 8px;
+            border-radius: 5px;
+            background: #e1eaf1; /* Soluk mavi */
+            cursor: pointer;
+        }
+        .button {
+            width: 35px;
+            height: 35px;
+            background: #f1e2e2; /* Soluk pembe */
+            color: #7a6f68; /* Pastel kahverengi */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: #f7d1d1; /* Pembe tonlarında yumuşama */
+            transform: scale(1.1);
+        }
+        .highlight {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { background-color: rgba(255, 255, 0, 0.5); }
+            100% { background-color: transparent; }
+        }
+        #canvas-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+        canvas {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="panel">
+        <div>
+            <label for="angle-slider">Merkez Açı (°): <span id="angle-display">0</span></label>
+            <div class="control">
+                <button class="button" id="angle-decrease">-</button>
+                <input id="angle-slider" type="range" min="0" max="360" value="0">
+                <button class="button" id="angle-increase">+</button>
+            </div>
+        </div>
+        <div>
+            <label for="radius-slider">Yarıçap (cm): <span id="radius-display">6</span></label>
+            <div class="control">
+                <button class="button" id="radius-decrease">-</button>
+                <input id="radius-slider" type="range" min="5" max="8" value="6">
+                <button class="button" id="radius-increase">+</button>
+            </div>
+        </div>
+        <div>
+            <label>Yay Uzunluğu (cm): <span id="arc-length-display">0</span></label>
+        </div>
+    </div>
+    <div id="canvas-container">
+        <canvas id="circleCanvas" width="600" height="600"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('circleCanvas');
+        const ctx = canvas.getContext('2d');
+    
+        const cmToPx = 37.8; // 1 cm = 37.8 px
+        const angleSlider = document.getElementById('angle-slider');
+        const angleDisplay = document.getElementById('angle-display');
+        const angleIncrease = document.getElementById('angle-increase');
+        const angleDecrease = document.getElementById('angle-decrease');
+    
+        const radiusSlider = document.getElementById('radius-slider');
+        const radiusDisplay = document.getElementById('radius-display');
+        const radiusIncrease = document.getElementById('radius-increase');
+        const radiusDecrease = document.getElementById('radius-decrease');
+    
+        const arcLengthDisplay = document.getElementById('arc-length-display');
+    
+        let angle = parseInt(angleSlider.value);
+        let radius = parseInt(radiusSlider.value);
+    
+        // Maksimum canvas çapı (Yarısı: 300px)
+        const maxCanvasSize = Math.min(canvas.width, canvas.height) / 2;
+    
+        function calculateArcLength() {
+            return (Math.PI * radius * angle) / 180; // Yay uzunluğu formülü
+        }
+    
+        function drawClock() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const pixelRadius = Math.min(radius * cmToPx, maxCanvasSize);  // Çapın taşmaması için sınırlandırma
+    
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+            // Çember çizimi (beyaz)
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, pixelRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = '#ffffff'; /* Beyaz iç */
+            ctx.fill();
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = '#b1c4d4'; /* Soluk gri mavi */
+            ctx.stroke();
+    
+            // Saatin rakamları (siyah)
+            const fontSize = pixelRadius * 0.1;
+            for (let i = 1; i <= 12; i++) {
+                const angleRadian = (i * 30 - 90) * (Math.PI / 180);
+                const x = centerX + pixelRadius * 0.85 * Math.cos(angleRadian);
+                const y = centerY + pixelRadius * 0.85 * Math.sin(angleRadian);
+    
+                ctx.fillStyle = '#000000'; /* Siyah */
+                ctx.font = `${fontSize}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(i, x, y);
+            }
+    
+            // Yelkovan (sarı)
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + pixelRadius * 0.8 * Math.cos(-Math.PI / 2), centerY + pixelRadius * 0.8 * Math.sin(-Math.PI / 2));
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = '#8B000'; /* Sarı */
+            ctx.stroke();
+    
+            // Akrep (kırmızı)
+            const radian = (angle - 90) * (Math.PI / 180);
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + pixelRadius * 0.5 * Math.cos(radian), centerY + pixelRadius * 0.5 * Math.sin(radian));
+            ctx.lineWidth = 6;
+            ctx.strokeStyle = '#e84d62'; /* Koyu kırmızı */
+            ctx.stroke();
+        }
+    
+        function updateDisplay() {
+            angleDisplay.textContent = angle;
+            radiusDisplay.textContent = radius;
+            arcLengthDisplay.textContent = calculateArcLength().toFixed(2);
+    
+            angleDisplay.classList.add('highlight');
+            radiusDisplay.classList.add('highlight');
+            arcLengthDisplay.classList.add('highlight');
+    
+            setTimeout(() => {
+                angleDisplay.classList.remove('highlight');
+                radiusDisplay.classList.remove('highlight');
+                arcLengthDisplay.classList.remove('highlight');
+            }, 1500);
+        }
+    
+        function updateAngle(value) {
+            angle = Math.max(0, Math.min(360, angle + value));
+            angleSlider.value = angle;
+            updateDisplay();
+            drawClock();
+        }
+    
+        function updateRadius(value) {
+            radius = Math.max(5, Math.min(8, radius + value));  // Yarıçap 5 ile 8 arasında olacak
+            radiusSlider.value = radius;
+            updateDisplay();
+            drawClock();
+        }
+    
+        angleSlider.addEventListener('input', () => {
+            angle = parseInt(angleSlider.value);
+            updateDisplay();
+            drawClock();
+        });
+    
+        radiusSlider.addEventListener('input', () => {
+            radius = parseInt(radiusSlider.value);
+            updateDisplay();
+            drawClock();
+        });
+    
+        angleIncrease.addEventListener('click', () => updateAngle(1));
+        angleDecrease.addEventListener('click', () => updateAngle(-1));
+        radiusIncrease.addEventListener('click', () => updateRadius(1));
+        radiusDecrease.addEventListener('click', () => updateRadius(-1));
+    
+        // İlk çizim
+        updateDisplay();
+        drawClock();
+    </script>
+</body>
+</html>
