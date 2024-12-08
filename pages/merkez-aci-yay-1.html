@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merkez Açı - Yay Ölçüsü</title>
+    <title>WebMat | Merkez Açı - Yay ilişkisi</title>
     <style>
         body {
             margin: 0;
@@ -192,6 +192,24 @@
             ctx.lineWidth = 6;
             ctx.strokeStyle = '#e84d62'; /* Koyu kırmızı */
             ctx.stroke();
+
+            // Yay çizimi (parlatma efekti)
+            const arcStart = -Math.PI / 2; // Başlangıç açısı
+            const arcEnd = (angle - 90) * (Math.PI / 180); // Son açı
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, pixelRadius, arcStart, arcEnd);
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = 'rgba(255, 223, 0, 0.8)'; /* Sarı, transparan */
+            ctx.stroke();
+            
+            // Yayın parlatma efekti
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = 'rgba(255, 223, 0, 1)';
+            ctx.shadowColor = 'rgba(255, 223, 0, 0.7)';
+            ctx.shadowBlur = 15;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
         }
     
         function updateDisplay() {
