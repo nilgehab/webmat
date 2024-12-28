@@ -200,7 +200,7 @@
             genislik = Math.floor(Math.random() * 10) + 5; 
             yukseklik = Math.floor(Math.random() * 10) + 5;
             alanMetrekare = genislik * yukseklik;
-            alanDiv.textContent = `Alan: ${alanMetrekare} m²`;
+            alanDiv.textContent = `Alan: ${alanMetrekare.toLocaleString('tr-TR')} m²`;
             boyutlarDiv.textContent = `Boyutlar: ${genislik} m x ${yukseklik} m`;
         }
 
@@ -208,7 +208,7 @@
             const birimIndex = parseInt(standartSurgu.value, 10);
             const birimler = ['mm²', 'cm²', 'dm²', 'm²', 'dam²', 'hm²', 'km²'];
             const faktorler = [1000000, 10000, 100, 1, 0.01, 0.0001, 0.000001];
-            const yeniAlan = (alanMetrekare / faktorler[birimIndex]).toFixed(6);
+            const yeniAlan = (alanMetrekare / faktorler[birimIndex]).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 6 });
             alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
             standartLabel.textContent = birimler[birimIndex];
         }
@@ -218,7 +218,7 @@
             const birimler = ['ar', 'dekar', 'hektar'];
             const faktorler = [0.01, 0.1, 0.0001];
             if (birimIndex < faktorler.length) {
-                const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toFixed(4);
+                const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
                 alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
                 araziLabel.textContent = birimler[birimIndex];
             }
