@@ -204,25 +204,29 @@
             boyutlarDiv.textContent = `Boyutlar: ${genislik} m x ${yukseklik} m`;
         }
 
-        function standartBirimDonusumu() {
-            const birimIndex = parseInt(standartSurgu.value, 10);
-            const birimler = ['mm²', 'cm²', 'dm²', 'm²', 'dam²', 'hm²', 'km²'];
-            const faktorler = [1000000, 10000, 100, 1, 0.01, 0.0001, 0.000001];
-            const yeniAlan = (alanMetrekare / faktorler[birimIndex]).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 6 });
-            alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
-            standartLabel.textContent = birimler[birimIndex];
-        }
-
         function araziBirimDonusumu() {
-            const birimIndex = parseInt(araziSurgu.value, 10);
-            const birimler = ['ar', 'dekar', 'hektar'];
-            const faktorler = [0.01, 0.1, 0.0001];
-            if (birimIndex < faktorler.length) {
-                const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
-                alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
-                araziLabel.textContent = birimler[birimIndex];
-            }
-        }
+    const birimIndex = parseInt(araziSurgu.value, 10);
+    const birimler = ['ar', 'dekar', 'hektar'];
+    const faktorler = [0.01, 0.001, 0.0001]; // Düzeltildi
+    const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 4 
+    });
+    alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
+    araziLabel.textContent = birimler[birimIndex];
+}
+
+function standartBirimDonusumu() {
+    const birimIndex = parseInt(standartSurgu.value, 10);
+    const birimler = ['mm²', 'cm²', 'dm²', 'm²', 'dam²', 'hm²', 'km²'];
+    const faktorler = [1000000, 10000, 100, 1, 0.01, 0.0001, 0.000001]; // Doğru faktörler
+    const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 6 
+    });
+    alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
+    standartLabel.textContent = birimler[birimIndex];
+}
 
         standartSurgu.addEventListener('input', standartBirimDonusumu);
         araziSurgu.addEventListener('input', araziBirimDonusumu);
