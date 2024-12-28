@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birim Dönüşüm Oyunu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf3e6;
+            color: #4a4a4a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #5a9e6f;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .surgu {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff8e7;
+            border: 1px solid #eedfcc;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .surgu h2 {
+            color: #5a5a5a;
+            margin-bottom: 10px;
+        }
+
+        .bahce {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            border: 2px dashed #c8e6c9;
+            height: 400px;
+            margin: 10px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .bahce .alan-gosterimi {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .bahce .boyut-gosterimi {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .bahce button {
+            background-color: #5a9e6f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .bahce button:hover {
+            background-color: #4e8b61;
+        }
+
+        .slider-container {
+            position: relative;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 20px 0;
+            appearance: none;
+            height: 8px;
+            background: linear-gradient(to right, #5a9e6f, #d4f0e2);
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .slider-label::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: #d4d4d4;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .donusum-tablosu {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff8e7;
+            border: 1px solid #eedfcc;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Birim Dönüşüm Oyunu</h1>
+
+    <div class="container">
+        <div class="surgu">
+            <h2>Standart Ölçü Birimleri</h2>
+            <h3 id="standartLabel">m²</h3>
+            <div class="slider-container">
+                <input type="range" min="0" max="6" value="3" class="slider" id="standartSurgu">
+                <div class="slider-label" id="standartCetvel">
+                    <span>mm²</span>
+                    <span>cm²</span>
+                    <span>dm²</span>
+                    <span>m²</span>
+                    <span>dam²</span>
+                    <span>hm²</span>
+                    <span>km²</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bahce" id="bahce">
+            <div class="alan-gosterimi" id="alan">Alan: 0 m²</div>
+            <div class="boyut-gosterimi" id="boyutlar"></div>
+            <button onclick="yeniBahce()">Yeni Bahçe Oluştur</button>
+        </div>
+
+        <div class="donusum-tablosu">
+            <h2>Arazi Ölçü Birimleri</h2>
+            <h3 id="araziLabel">ar</h3>
+            <div class="slider-container">
+                <input type="range" min="0" max="2" value="0" class="slider" id="araziSurgu">
+                <div class="slider-label" id="araziCetvel">
+                    <span>ar</span>
+                    <span>dekar</span>
+                    <span>hektar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bahce = document.getElementById('bahce');
+        const alanDiv = document.getElementById('alan');
+        const boyutlarDiv = document.getElementById('boyutlar');
+        const standartSurgu = document.getElementById('standartSurgu');
+        const araziSurgu = document.getElementById('araziSurgu');
+        const standartLabel = document.getElementById('standartLabel');
+        const araziLabel = document.getElementById('araziLabel');
+
+        let alanMetrekare = 0;
+        let genislik = 0;
+        let yukseklik = 0;
+
+        function yeniBahce() {
+            genislik = Math.floor(Math.random() * 10) + 5; 
+            yukseklik = Math.floor(Math.random() * 10) + 5;
+            alanMetrekare = genislik * yukseklik;
+            alanDiv.textContent = `Alan: ${alanMetrekare} m²`;
+            boyutlarDiv.textContent = `Boyutlar: ${genislik} m x ${yukseklik} m`;
+        }
+
+        function standartBirimDonusumu() {
+            const birimIndex = parseInt(standartSurgu.value, 10);
+            const birimler = ['mm²', 'cm²', 'dm²', 'm²', 'dam²', 'hm²', 'km²'];
+            const faktorler = [1000000, 10000, 100, 1, 0.01, 0.0001, 0.000001];
+            const yeniAlan = (alanMetrekare / faktorler[birimIndex]).toFixed(6);
+            alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
+            standartLabel.textContent = birimler[birimIndex];
+        }
+
+        function araziBirimDonusumu() {
+            const birimIndex = parseInt(araziSurgu.value, 10);
+            const birimler = ['ar', 'dekar', 'hektar'];
+            const faktorler = [0.01, 0.1, 0.0001];
+            if (birimIndex < faktorler.length) {
+                const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toFixed(4);
+                alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
+                araziLabel.textContent = birimler[birimIndex];
+            }
+        }
+
+        standartSurgu.addEventListener('input', standartBirimDonusumu);
+        araziSurgu.addEventListener('input', araziBirimDonusumu);
+
+        yeniBahce();
+    </script>
+</body>
+</html>
