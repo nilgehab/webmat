@@ -1,27 +1,34 @@
+<!-- FURKAN TANKARA (AÇIKLAMALI KODLAR) -->
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- HTML belgesinin karakter setini ve temel meta bilgilerini tanımlıyoruz -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birim Dönüşüm Oyunu</title>
     <style>
+        /* Sayfa genelinde kullanılan temel stil tanımları */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fdf3e6;
-            color: #4a4a4a;
-            display: flex;
+            background-color: #fdf3e6; /* Arka plan rengini tanımlar */
+            color: #4a4a4a; /* Yazı rengini tanımlar */
+            display: flex; /* Elemanları dikey hizalama için flex kullanır */
             flex-direction: column;
             align-items: center;
             margin: 0;
             padding: 0;
         }
 
+        /* Başlık için stil */
         h1 {
             color: #5a9e6f;
             margin-top: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
         }
 
+        /* Konteyner elemanları için genel stil */
         .container {
             display: flex;
             justify-content: center;
@@ -29,25 +36,28 @@
             width: 100%;
             max-width: 1200px;
             padding: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* İçeriklerin taşmasını önler */
         }
 
+        /* Kaydırma bölgesi için stil */
         .surgu {
             flex: 1;
             padding: 20px;
             background-color: #fff8e7;
             border: 1px solid #eedfcc;
-            border-radius: 10px;
+            border-radius: 10px; /* Köşeleri yuvarlatır */
             margin: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
             text-align: center;
         }
 
+        /* Kaydırma başlıkları için stil */
         .surgu h2 {
             color: #5a5a5a;
             margin-bottom: 10px;
         }
 
+        /* Bahçe alanı stil tanımları */
         .bahce {
             flex: 2;
             display: flex;
@@ -55,15 +65,16 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            background-color: #e8f5e9;
-            border-radius: 15px;
-            border: 2px dashed #c8e6c9;
+            background-color: #e8f5e9; /* Arka plan rengi */
+            border-radius: 15px; /* Köşeleri yuvarlatır */
+            border: 2px dashed #c8e6c9; /* Çizgili kenarlık */
             height: 400px;
             margin: 10px;
             padding: 20px;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 1s ease-in-out; /* Giriş animasyonu */
         }
 
+        /* Alan ve boyut bilgisi için stil */
         .bahce .alan-gosterimi {
             font-size: 24px;
             font-weight: bold;
@@ -75,6 +86,7 @@
             margin-top: 10px;
         }
 
+        /* Bahçe alanındaki buton için stil */
         .bahce button {
             background-color: #5a9e6f;
             color: white;
@@ -82,29 +94,27 @@
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 5px;
-            cursor: pointer;
+            cursor: pointer; /* Tıklanabilirlik imleci */
             margin-top: 20px;
         }
 
         .bahce button:hover {
-            background-color: #4e8b61;
+            background-color: #4e8b61; /* Hover efekti */
         }
 
-        .slider-container {
-            position: relative;
-        }
-
+        /* Kaydırma çubuğu için özel stil */
         .slider {
             width: 100%;
             margin: 20px 0;
             appearance: none;
             height: 8px;
-            background: linear-gradient(to right, #5a9e6f, #d4f0e2);
+            background: linear-gradient(to right, #5a9e6f, #d4f0e2); /* Renk geçişi */
             border-radius: 5px;
             outline: none;
             cursor: pointer;
         }
 
+        /* Kaydırma cetvelindeki değerleri hizalama */
         .slider-label {
             display: flex;
             justify-content: space-between;
@@ -113,77 +123,55 @@
             position: relative;
         }
 
-        .slider-label::before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: #d4d4d4;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: -1;
-        }
-
-        .donusum-tablosu {
-            flex: 1;
-            padding: 20px;
-            background-color: #fff8e7;
-            border: 1px solid #eedfcc;
-            border-radius: 10px;
-            margin: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
+        /* Fade-in animasyonunun tanımı */
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
-
     </style>
 </head>
 <body>
     <h1>Birim Dönüşüm Oyunu</h1>
 
     <div class="container">
+        <!-- Standart ölçü birimleri için kaydırma alanı -->
         <div class="surgu">
             <h2>Standart Ölçü Birimleri</h2>
             <h3 id="standartLabel">m²</h3>
-            <div class="slider-container">
-                <input type="range" min="0" max="6" value="3" class="slider" id="standartSurgu">
-                <div class="slider-label" id="standartCetvel">
-                    <span>mm²</span>
-                    <span>cm²</span>
-                    <span>dm²</span>
-                    <span>m²</span>
-                    <span>dam²</span>
-                    <span>hm²</span>
-                    <span>km²</span>
-                </div>
+            <input type="range" min="0" max="6" value="3" class="slider" id="standartSurgu">
+            <div class="slider-label" id="standartCetvel">
+                <span>mm²</span>
+                <span>cm²</span>
+                <span>dm²</span>
+                <span>m²</span>
+                <span>dam²</span>
+                <span>hm²</span>
+                <span>km²</span>
             </div>
         </div>
 
+        <!-- Bahçe bilgileri ve alan oluşturma bölgesi -->
         <div class="bahce" id="bahce">
             <div class="alan-gosterimi" id="alan">Alan: 0 m²</div>
             <div class="boyut-gosterimi" id="boyutlar"></div>
             <button onclick="yeniBahce()">Yeni Bahçe Oluştur</button>
         </div>
 
-        <div class="donusum-tablosu">
+        <!-- Arazi ölçü birimleri için kaydırma alanı -->
+        <div class="surgu">
             <h2>Arazi Ölçü Birimleri</h2>
             <h3 id="araziLabel">ar</h3>
-            <div class="slider-container">
-                <input type="range" min="0" max="2" value="0" class="slider" id="araziSurgu">
-                <div class="slider-label" id="araziCetvel">
-                    <span>ar</span>
-                    <span>dekar</span>
-                    <span>hektar</span>
-                </div>
+            <input type="range" min="0" max="2" value="0" class="slider" id="araziSurgu">
+            <div class="slider-label" id="araziCetvel">
+                <span>ar</span>
+                <span>dekar</span>
+                <span>hektar</span>
             </div>
         </div>
     </div>
 
     <script>
+        // HTML elemanlarını JavaScript ile kontrol etmek için seçiyoruz
         const bahce = document.getElementById('bahce');
         const alanDiv = document.getElementById('alan');
         const boyutlarDiv = document.getElementById('boyutlar');
@@ -196,41 +184,46 @@
         let genislik = 0;
         let yukseklik = 0;
 
+        // Yeni bahçe oluşturup boyutlarını rastgele seçen fonksiyon
         function yeniBahce() {
-            genislik = Math.floor(Math.random() * 10) + 5; 
-            yukseklik = Math.floor(Math.random() * 10) + 5;
+            genislik = Math.floor(Math.random() * 10) + 5; // Genişlik 5 ile 14 arasında olur
+            yukseklik = Math.floor(Math.random() * 10) + 5; // Yükseklik 5 ile 14 arasında olur
             alanMetrekare = genislik * yukseklik;
             alanDiv.textContent = `Alan: ${alanMetrekare.toLocaleString('tr-TR')} m²`;
             boyutlarDiv.textContent = `Boyutlar: ${genislik} m x ${yukseklik} m`;
         }
 
+        // Arazi birim dönüşüm fonksiyonu
         function araziBirimDonusumu() {
-    const birimIndex = parseInt(araziSurgu.value, 10);
-    const birimler = ['ar', 'dekar', 'hektar'];
-    const faktorler = [0.01, 0.001, 0.0001]; // Düzeltildi
-    const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { 
-        minimumFractionDigits: 2, 
-        maximumFractionDigits: 4 
-    });
-    alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
-    araziLabel.textContent = birimler[birimIndex];
-}
+            const birimIndex = parseInt(araziSurgu.value, 10); // Kaydırıcıdaki değeri alır
+            const birimler = ['ar', 'dekar', 'hektar'];
+            const faktorler = [0.01, 0.001, 0.0001]; // Metrekareden dönüşüm faktörleri
+            const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { 
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: 4 
+            });
+            alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
+            araziLabel.textContent = birimler[birimIndex];
+        }
 
-function standartBirimDonusumu() {
-    const birimIndex = parseInt(standartSurgu.value, 10);
-    const birimler = ['mm²', 'cm²', 'dm²', 'm²', 'dam²', 'hm²', 'km²'];
-    const faktorler = [1000000, 10000, 100, 1, 0.01, 0.0001, 0.000001]; // Doğru faktörler
-    const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { 
-        minimumFractionDigits: 2, 
-        maximumFractionDigits: 6 
-    });
-    alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
-    standartLabel.textContent = birimler[birimIndex];
-}
+        // Standart birim dönüşüm fonksiyonu
+        function standartBirimDonusumu() {
+            const birimIndex = parseInt(standartSurgu.value, 10); // Kaydırıcıdaki değeri alır
+            const birimler = ['mm²', 'cm²', 'dm²', 'm²', 'dam²', 'hm²', 'km²'];
+            const faktorler = [1000000, 10000, 100, 1, 0.01, 0.0001, 0.000001]; // Metrekareden dönüşüm faktörleri
+            const yeniAlan = (alanMetrekare * faktorler[birimIndex]).toLocaleString('tr-TR', { 
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: 6 
+            });
+            alanDiv.textContent = `Alan: ${yeniAlan} ${birimler[birimIndex]}`;
+            standartLabel.textContent = birimler[birimIndex];
+        }
 
+        // Kaydırıcılar için olay dinleyicilerini tanımlıyoruz
         standartSurgu.addEventListener('input', standartBirimDonusumu);
         araziSurgu.addEventListener('input', araziBirimDonusumu);
 
+        // Sayfa yüklendiğinde bir başlangıç bahçesi oluşturuyoruz
         yeniBahce();
     </script>
 </body>
