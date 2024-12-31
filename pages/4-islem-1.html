@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dönerci Oyunu</title>
+    <style>
+        /* Genel stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Başlat ekranı */
+        #start-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: #f7d9c4;
+            position: absolute;
+            z-index: 2;
+        }
+
+        #start-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #start-button:hover {
+            background-color: #5a6268;
+        }
+
+        /* Telefon görünümü */
+        #phone {
+            width: 320px;
+            height: 600px;
+            background-color: #eaf4fc;
+            border-radius: 25px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            display: none; /* Başlangıçta gizli */
+        }
+
+        #header {
+            background-color: #48bfe3;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 15px 15px 0 0;
+        }
+
+        #messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Mesajlar arasındaki mesafeyi artırdık */
+        }
+
+        /* Mesaj balonları */
+        .message {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .incoming {
+            align-self: flex-start;
+            background-color: #d4f1f4;
+            border-bottom-left-radius: 0;
+        }
+
+        .outgoing {
+            align-self: flex-end;
+            background-color: #8ecae6;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+
+        /* Mesaj animasyonu */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #go-to-shop {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        #go-to-shop.hidden {
+            display: none;
+        }
+
+        /* Defter stili */
+        #notebook {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            width: 500px;
+            height: 400px;
+            background-color: #fff;
+            border: 2px solid #0077b6;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Başlangıçta gizli */
+            
+        }
+
+        /* Sol sayfa (notlar) */
+        #left-page {
+            width: 50%;
+            border-right: 2px solid #0077b6;
+            padding-right: 10px;
+            font-family: 'Brush Script MT', cursive; /* El yazısı fontu */
+            font-size: 18px;
+            color: #333;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Sağ sayfa (menüler) */
+        #right-page {
+            width: 50%;
+            padding-left: 10px;
+            font-size: 16px;
+            color: #333;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        #notebook-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+
+        .menu-item {
+            margin-bottom: 10px;
+            background-color: #48bfe3;
+            color: white;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="start-screen">
+        <button id="start-button">Başlat</button>
+    </div>
+
+    <div id="phone">
+        <div id="header">Dayım</div>
+        <div id="messages"></div>
+        <button id="go-to-shop" class="hidden">Dükkâna Git</button>
+    </div>
+
+    <div id="notebook" class="hidden">
+        <div id="notebook-header">Defter</div>
+        <div id="left-page">
+            <p>Otomatik notlar buraya eklenecek.</p>
+        </div>
+        <div id="right-page">
+            <div class="menu-item">Menü 1 - 100 TL</div>
+            <div class="menu-item">Menü 2 - 120 TL</div>
+            <div class="menu-item">Menü 3 - 150 TL</div>
+            <div class="menu-item">Menü 4 - 90 TL</div>
+            <div class="menu-item">Menü 5 - 110 TL</div>
+            <div class="menu-item">Menü 6 - 130 TL</div>
+            <div class="menu-item">Menü 7 - 140 TL</div>
+            <div class="menu-item">Menü 8 - 200 TL</div>
+        </div>
+    </div>
+
+    <script>
+        const startButton = document.getElementById("start-button");
+        const startScreen = document.getElementById("start-screen");
+        const phone = document.getElementById("phone");
+        const goToShopButton = document.getElementById("go-to-shop");
+        const notebook = document.getElementById("notebook");
+
+        // Dayı'nın mesajları
+        const dayiMessages = [
+            "Merhaba yeğenim. Uzun zamandır görüşemiyoruz. Umarım her şey yolundadır.",
+            "Biliyorsun dönerci dükkanımızı açıyoruz bu haftasonu.",
+            "Ancak kasaya bakacak çalışanı henüz bulamadım.",
+            "Eğer vaktin varsa bana birkaç günlüğüne yardım edebilir misin?"
+        ];
+
+        const studentResponse = "Tabii ki ederim, dayıcım! Çok heyecanlıyım!";
+
+        // Başlat düğmesine tıklayınca
+        startButton.addEventListener("click", () => {
+            startScreen.style.display = "none"; // Başlat ekranını kaldır
+            phone.style.display = "flex"; // Telefonu göster
+            showMessages(); // Mesajları sırayla göster
+        });
+
+        // Mesajları sırayla gösterme işlevi
+        function showMessages() {
+            let index = 0;
+
+            function addMessage(text, type) {
+                const message = document.createElement("div");
+                message.classList.add("message", type);
+                message.textContent = text;
+                messages.appendChild(message);
+                messages.scrollTop = messages.scrollHeight; // Otomatik kaydırma
+            }
+
+            const interval = setInterval(() => {
+                if (index < dayiMessages.length) {
+                    addMessage(dayiMessages[index], "incoming");
+                    index++;
+                } else {
+                    clearInterval(interval); // Mesajları bitir
+                    setTimeout(() => {
+                        addMessage(studentResponse, "outgoing"); // Öğrenci cevabı
+                        goToShopButton.classList.remove("hidden"); // "Dükkâna Git" butonunu göster
+                    }, 1500); // Giden mesaja biraz daha süre ekledik
+                }
+            }, 3000); // Mesajlar arasındaki süreyi 3 saniye olarak ayarladık
+        }
+
+        goToShopButton.addEventListener("click", () => {
+    window.location.href = "dukkan.html"; // Burada yeni HTML sayfanızın adını belirtin
+});
+
+
+    </script>
+</body>
+</html>
